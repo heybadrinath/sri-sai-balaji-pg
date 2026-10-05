@@ -1,0 +1,181 @@
+/* Light passes through a field of square glass blocks. */
+.intro-spectrum {
+  position: absolute;
+  left: -28%;
+  right: -22%;
+  bottom: -5%;
+  height: 69%;
+  transform: translate3d(0, calc(var(--hero-travel, 0px) * -0.28), 0);
+}
+.intro-spectrum-core {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse at 56% 68%,
+      #5553de 0,
+      #7880ed99 26%,
+      transparent 62%
+    ),
+    radial-gradient(
+      ellipse at 29% 75%,
+      #73cee9 5%,
+      #99ddf180 27%,
+      transparent 62%
+    ),
+    radial-gradient(
+      ellipse at 83% 78%,
+      #879bf7 0,
+      #bbd4f9b5 27%,
+      transparent 61%
+    );
+  filter: blur(25px);
+  animation: glass-light-drift 14s ease-in-out infinite alternate;
+}
+.intro-spectrum::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--surface-grain);
+  opacity: 0.15;
+  mix-blend-mode: soft-light;
+}
+.intro-bricks {
+  position: absolute;
+  left: -64px;
+  bottom: -35px;
+  width: calc(100% + 128px);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1px;
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0,
+    #0005 13%,
+    #000 37%,
+    #000 85%,
+    transparent 100%
+  );
+  transform: translate3d(0, calc(var(--hero-travel, 0px) * -0.48), 0);
+}
+.intro-bricks i {
+  display: block;
+  aspect-ratio: 1;
+  position: relative;
+  border-radius: 2px;
+  border: 1px solid #ffffff52;
+  background: linear-gradient(
+    145deg,
+    #ffffff4d,
+    #ffffff0a 48%,
+    #e5edff18 85%,
+    #fff8
+  );
+  box-shadow:
+    inset 1px 1px 1px #fffc,
+    inset -1px -1px 1px #746bc21c,
+    1px 3px 7px -5px #3f4a9f59;
+}
+.intro-bricks i::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px solid #fff1;
+  border-radius: 1px;
+  background: linear-gradient(160deg, #ffffff18, transparent 30%, #888bd714);
+}
+.intro-bricks i:nth-child(5n + 2) {
+  background: linear-gradient(145deg, #fff8, #f4f9ff18 55%, #7593e32b);
+}
+.intro-bricks i:nth-child(7n) {
+  background: linear-gradient(145deg, #fff5, #c9cbf538 50%, #bdc0ff35);
+}
+.intro-bricks i:nth-child(11n) {
+  background: linear-gradient(150deg, #fff9, #edfaff40 50%, #7abbea30);
+}
+.intro-clear {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #fcfbff 0%,
+    #fcfbfff0 13%,
+    #fcfbff99 37%,
+    #fcfbff22 66%,
+    #fcfbff44 100%
+  );
+}
+.intro-content {
+  text-shadow: 0 2px 25px #fff8;
+}
+.intro-explore {
+  border-color: #ffffffdb;
+  background: #ffffffb8;
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 8px 28px #5b59a410;
+}
+.intro-bottom > a,
+.intro-bottom > span {
+  color: #3e3664;
+}
+@keyframes glass-light-drift {
+  from {
+    transform: translate3d(-3%, 3%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(5%, -5%, 0) scale(1.12);
+  }
+}
+/* Fine grain adds depth without covering the type. */
+.visit-guide {
+  isolation: isolate;
+}
+.visit-guide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  background-image: var(--surface-grain);
+  background-size: 180px 180px;
+  opacity: 0.15;
+  mix-blend-mode: multiply;
+}
+.visit-guide {
+  position: relative;
+  background-image: radial-gradient(
+    ellipse at 100% 100%,
+    #d8ccf499,
+    transparent 80%
+  );
+  box-shadow: inset 0 1px 0 #fff;
+}
+.local-area-map {
+  box-shadow: 0 15px 45px -35px #45396066;
+}
+
+@media (min-width: 700px) {
+  .intro-spectrum {
+    left: -12%;
+    right: -12%;
+    height: 70%;
+    bottom: -14%;
+  }
+  .intro-bricks {
+    left: -5%;
+    width: 110%;
+    bottom: -85px;
+    grid-template-columns: repeat(18, minmax(0, 1fr));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro-spectrum,
+  .intro-bricks {
+    transform: none;
+  }
+  .intro-spectrum-core {
+    animation: none;
+  }
+}

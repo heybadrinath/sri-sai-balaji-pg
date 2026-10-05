@@ -1,0 +1,11 @@
+design/
+research/
+public/
+README.md
+design-qa.md
+assets/README.md
+assets/fonts/*.ttf
+assets/photos/*.png
+assets/photos/*.jpg
+
+.env*

@@ -1,0 +1,15 @@
+.vercel/
+public/
+node_modules/
+.DS_Store
+.vercel
+.env*
+
+# Local design archives and research
+design/
+research/
+
+# Uncompressed source assets; the website uses WebP and WOFF2
+assets/photos/*.png
+assets/photos/*.jpg
+assets/fonts/*.ttf

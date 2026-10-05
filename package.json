@@ -1,0 +1,14 @@
+{
+  "name": "sri-sai-balaji-pg",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sri Sai Balaji Luxury PG for Ladies website",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "start": "python3 -m http.server 4173 --bind 127.0.0.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
